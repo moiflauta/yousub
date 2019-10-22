@@ -1,13 +1,7 @@
 import youtube_dl
+import ffmpeg
 
 from modulos.imprime_cosas import imprime_cosas
-
-
-lavidamodernaYoutube = "https://www.youtube.com/watch?v=tEhaJ4r15zA"
-etherum = 'https://www.youtube.com/watch?v=jp46KmeexxI'
-nuevaEsperanza = 'https://www.youtube.com/watch?v=BFXsnuJg2nQ'
-listaVideos = [lavidamodernaYoutube, etherum, nuevaEsperanza]
-video_input = listaVideos[1]
 
 
 class objetoYouTube():
@@ -22,6 +16,8 @@ class objetoYouTube():
 
     def datosVideo(self):
         """Obtiene la info del vídeo"""
+
+        # ydl = youtube_dl.YoutubeDL({'outtmpl': '%(id)s%(ext)s'})
 
         ydl = youtube_dl.YoutubeDL()
         with ydl:
@@ -49,5 +45,4 @@ class objetoYouTube():
         youtube_dl.main(ydl_opciones)
 
 
-ytobjeto = objetoYouTube(video_input)
 
